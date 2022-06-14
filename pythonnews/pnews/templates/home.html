@@ -1,0 +1,35 @@
+{% extends 'base.html'  %}
+
+{% block content  %}
+
+  <div class="card" style="width: 58rem;">
+  
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <h5 align="left">Popular in Python forums:</h4>
+            </tr>
+            <tr>
+              <th scope="col">Thread</th>
+              <th scope="col">Date</th>
+              <th scope="col">Replies</th>
+              <th scope="col" >Views</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for object in object_list %}
+            <tr>
+              <td><a href="{{object.url}}">{{object.title}}</a></td>
+              <td>{{object.date}}</td>
+              <td align="center">{{object.replies}}</td>
+              <td align="center" ><h6><span class="badge badge-primary">
+                {{object.views}}</span></h6></td>
+            </tr>
+            {% endfor %}
+         
+          </tbody>
+        </table>
+
+      </div>
+
+  {% endblock  %}
